@@ -5,7 +5,15 @@ SARS-CoV-2 is a single stranded RNA coronavirus. The main protease, $M^{pro}$, a
 Machine learning models that identify new compounds predicted to bind $M^{pro}$ will accelerate the discovery of new anti-COVID-19 treatments. 
 
 ## Binding affinity
+Binding affinity can be quantified in different ways, including:  
+● free energy change upon binding, ΔG (in kcal/mol)  
+● dissociation constant, Kd, (in M, molar)  
+● inhibition constant, Ki, (in M, molar)  
+● half-maximal inhibitory concentration, IC50, (in M, molar)  
 
+Note: IC50 values can't be compared unless they were measured at the same substrate concentration.
+
+The IC50 is the half maximal inhibitory concentration and indicates the potency of a substance in inhibiting. The lower the IC50 value the less substance is needed to inhibit. To make a drug 
 
 ## Molecular descriptors 
 Molecular features of the compounds are studied here by the Lipinski's rule of five. This is a rule of thumb to indicate the bioavailablity of the small molecule. According to the 'rule of five'a bioavailable molecule should not violate more than one of the following:  
@@ -36,5 +44,12 @@ ECFP are topological fingerproints for molecular characterization. They are circ
 #compute ECFP fingerprint with radius=2 and bit vector length=2048
 from rdkit.Chem import AllChem
 molecule = Chem.MolFromSmiles(smiles)
-fingerprint = AllChem.GetMorganFingerprintAsBitVect(molecule,2,nBits=1024)
+fp1 = AllChem.GetMorganFingerprintAsBitVect(molecule,2,nBits=1024)
 ```
+
+The compounds are clustered based on the Tanimoto index:
+
+```python
+DataStructs.FingerprintSimilarity(fp1,fp2, metric=DataStructs.DiceSimilarity)
+```
+By visualising the ...
