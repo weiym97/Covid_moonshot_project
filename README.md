@@ -20,7 +20,7 @@ Here, RDkit (the rdkit.Chem.Descriptors package) is used to compute the molecula
 
 ```python
 def calculate_descriptors(smile):
-  molecule = Chem.MolFromSmiles(smiles)
+  molecule = Chem.MolFromSmiles(smile)
   if molecule:
     hbd, hba, mw, pow = [x(molecule) for x in [NumHDonors, NumHAcceptors, MolWt, MolLogP]]
     res = [hbd, hba, mw, pow]
@@ -33,7 +33,8 @@ def calculate_descriptors(smile):
 ECFP are topological fingerproints for molecular characterization. They are circular fingerprints. Qualities of these fingerprints are: they can be very rapidly calculated; they are not predefined and can represent an essentially infinite number of different molecular features (including stereochemical information); their features represent the presence of particular substructures, allowing easier interpretation of analysis results; and the ECFP algorithm can be tailored to generate different types of circular fingerprints, optimized for different uses.
 
 ```python
-from rdkit import DataStructs
+#compute ECFP fingerprint with radius=2 and bit vector length=2048
+from rdkit.Chem import AllChem
 molecule = Chem.MolFromSmiles(smiles)
-fingerprint()
+fingerprint = AllChem.GetMorganFingerprintAsBitVect(molecule,2,nBits=1024)
 ```
