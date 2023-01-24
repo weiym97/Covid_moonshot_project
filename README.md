@@ -62,4 +62,7 @@ from rdkit import DataStructs
 DataStructs.FingerprintSimilarity(fp1,fp2, metric=DataStructs.DiceSimilarity)
 ```
 
-We clustered the similarity values using 
+We clustered the similarity values using ...
+
+### Murcko Scaffolds
+The Marcko scaffolds represent core structures of bioactive compounds. Note that the scaffolds are generic and important structural features essential for pharmaceutical activity are not presented in these scaffolds. However, it is an interesting first analysis to cluster the core building blocks of the compounds in our dataset.
