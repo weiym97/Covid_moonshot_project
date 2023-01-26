@@ -100,9 +100,22 @@ We see a high correlation but also a couple of values that did not show correlat
 ## Dataset
 We splitted our dataset in 80% training and 20% test. We will use 5-fold crossvalidation if we use machine learning methods with hyperparameters. 
 
-First we filtered out all IC50 values equal or bigger than 99% to make sure the data is equally distributed. 
+First we filtered out all IC50 values equal or bigger than 99% to make sure the data is equally distributed for the regression task. For the clasification task we want to keep these values. The regression set is therefore a subset of the classification set. 
 
 We determined the 200 chemical descriptors available in RDkit. 
 
-We splitted the data randomly and ran a linear regression model. Next, we splitted the data using the three clusters we observed in out clustermap. 
-As input features we used the 200 molecular descriptors. 
+We splitted the data randomly and ran a linear regression model. 
+Next, we splitted the data using the three clusters we observed in out clustermap. 
+
+The first cluster contains: 337 compounds
+The second cluster contains: 912 compounds
+The third cluster contains: 813 compounds
+
+Number of regression samples in cluster 1: 176
+Number of regression samples in cluster 2: 842
+Number of regression samples in cluster 3: 298
+
+
+As input features for our model we used the 200 molecular descriptors. 
+
+
