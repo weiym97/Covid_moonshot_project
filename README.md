@@ -118,4 +118,26 @@ Number of regression samples in cluster 3: 298
 
 As input features for our model we used the 200 molecular descriptors. 
 
+## Presentation
 
+Discuss in the presentation:  
+
+● Background of Mpro  
+● Molecular descriptors and Lip.. rule  
+● Number of compounds for which assay  
+● Correlation between f and r and why we are using only f (include number of samples) 
+● pIC50 values and difference between regression and classification sets  
+● Regression is subset of classification such that we can compare
+● fingerprint and Chirality  
+● Tanimoto index and clustering  
+● Highly similar molecules  
+● Murcko scaffolds and example
+● Making of the datasets  
+● Splitting 80% training and 20% test  
+● Show balanced dataset for classification  
+● Show numbers of clusters
+● Input features are the molecular descriptors  
+● Description of machine learning methods  
+● Describe for which we need to normalise  
+● Compare output of methods  
+● Futur: CHEMBL data and use the data of uploaded to make test and training
