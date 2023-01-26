@@ -62,7 +62,47 @@ from rdkit import DataStructs
 DataStructs.FingerprintSimilarity(fp1,fp2, metric=DataStructs.DiceSimilarity)
 ```
 
-We clustered the similarity values using ...
+We clustered the similarity values using the seaborn.clustermap() function. 
+
+![My Image](Figures/dendrogram_data.png)
+
+Two molecules with the highest Tanimoto index are visualised below. 
+
+![My Image](Figures/highly_similar_molecule_1.png)
+
+![My Image](Figures/highly_similar_molecule_2.png)
 
 ### Murcko Scaffolds
 The Marcko scaffolds represent core structures of bioactive compounds. Note that the scaffolds are generic and important structural features essential for pharmaceutical activity are not presented in these scaffolds. However, it is an interesting first analysis to cluster the core building blocks of the compounds in our dataset.
+
+We found 19 scaffolds containing more than 10 compounds. The most occuring compound is shown below.
+
+![My Image](Figures/most_occuring_core.png)
+
+## Distribution of binding affinity values
+The IC50 values in our dataset have the unit mM. We calculated the pIC50 values. 
+The distribution of the binding affinity values (pIC50) show an overrepresentation of .. values. This means many compounds do not bind to our target. 
+
+Distribtion of pIC50 values of fluorescence assay
+![My Image](Figures/distribution_binding_affinity_f.png)
+
+Distribtion of pIC50 values of mass spectrometry assay
+![My Image](Figures/distribution_binding_affinity_r.png)
+
+
+Of our ... samples. .. contain IC50 values of the fluorescence assay, .. contain IC50 values of the mass spectrometry assay and .. contain both values. We checked the correlation between the f and r to decide on which values we want to train our model.
+
+![My Image](Figures/correlation_f_r.png)
+
+We see a high correlation but also a couple of values that did not show correlation. Therefore we descided to start with only the fluorescence values. 
+
+
+## Dataset
+We splitted our dataset in 80% training and 20% test. We will use 5-fold crossvalidation if we use machine learning methods with hyperparameters. 
+
+First we filtered out all IC50 values equal or bigger than 99% to make sure the data is equally distributed. 
+
+We determined the 200 chemical descriptors available in RDkit. 
+
+We splitted the data randomly and ran a linear regression model. Next, we splitted the data using the three clusters we observed in out clustermap. 
+As input features we used the 200 molecular descriptors. 
