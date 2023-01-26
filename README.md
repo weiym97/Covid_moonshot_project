@@ -125,19 +125,19 @@ Discuss in the presentation:
 ● Background of Mpro  
 ● Molecular descriptors and Lip.. rule  
 ● Number of compounds for which assay  
-● Correlation between f and r and why we are using only f (include number of samples) 
+● Correlation between f and r and why we are using only f (include number of samples)  
 ● pIC50 values and difference between regression and classification sets  
-● Regression is subset of classification such that we can compare
+● Regression is subset of classification such that we can compare  
 ● fingerprint and Chirality  
 ● Tanimoto index and clustering  
 ● Highly similar molecules  
-● Murcko scaffolds and example
+● Murcko scaffolds and example  
 ● Making of the datasets  
 ● Splitting 80% training and 20% test  
 ● Show balanced dataset for classification  
-● Show numbers of clusters
+● Show numbers of clusters  
 ● Input features are the molecular descriptors  
 ● Description of machine learning methods  
 ● Describe for which we need to normalise  
 ● Compare output of methods  
-● Futur: CHEMBL data and use the data of uploaded to make test and training
+● Futur: CHEMBL data and use the data of uploaded to make test and training  
